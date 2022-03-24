@@ -10,7 +10,10 @@ while(index < len)
     array[index] = Convert.ToInt32(Console.ReadLine());
     index++;
 }
+
+Console.Write("[ ");
 for (int i=0; i<len; i++)
 {
 Console.Write($"{array[i]} ");
 }
+Console.Write("]");
