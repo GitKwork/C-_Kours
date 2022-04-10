@@ -1,0 +1,74 @@
+// Задача 39. Напишите программу, которая перевернёт одномерный массив 
+//(последний элемент будет на первом месте, а первый - на последнем и т.д.)
+
+// void fillarray (int [] arr)
+
+//  {
+//    for(int i = 0; i < arr.Length; i++)
+//   { arr[i] = new Random ().Next(-100,101);
+//     Console.Write ($" {arr[i]}");
+//   }
+//  }
+//  void revers (int [] arr)
+// {
+//     int [] res = new int [10];
+//     for (int i=0; i<10; i++)
+//    {
+//     res[i] = arr[9-i];
+//     res[9-i] = arr[i];
+//     Console.Write ($" {res[i]}");
+//     }
+// };
+
+// int [] massiveone = new int [10];
+// fillarray (massiveone);
+// Console.WriteLine (" ");
+// revers (massiveone);
+
+
+// Задача 40. Напишите программу, которая принимает на вход три числа и проверяет, 
+//может ли существовать треугольник с сторонами такой длины 
+//(каждая сторона треугольника меньше суммы двух других сторон).
+
+// Console.WriteLine ("Введите 3и стороны треугольника");
+// int A=Convert.ToInt16(Console.ReadLine());
+// int B=Convert.ToInt16(Console.ReadLine());
+// int C=Convert.ToInt16(Console.ReadLine());
+
+// if ((A<(B+C))&&(B<(A+C))&&(C<(A+B)))
+//  {
+//      Console.WriteLine("Треугольник существует");
+//  }
+// else
+//  {
+//      Console.WriteLine("Треугольник не существует");
+//  }
+
+// Задача 42: Напишите программу, которая будет преобразовывать десятичное число в двоичное
+
+// Console.WriteLine ("Введите десятичное число");
+// int A=Convert.ToInt16(Console.ReadLine());
+// int B= 0;
+// int length (int L)
+// {
+// int i =0;
+// while (L>0)
+// {
+//     L=L/2;
+//     i++;
+// }
+// return i;
+// }
+// int [] doble = new int [length (A)];
+// int j=0;
+//  while (A>0)
+// {
+//  B=A%2;
+//  A=A/2;
+//  doble[doble.Length-1-j]=B;
+//  j++;
+// }
+// for (int k=0; k<doble.Length;k++)
+// {
+//     Console.Write ($" {doble[k]}");
+// }
