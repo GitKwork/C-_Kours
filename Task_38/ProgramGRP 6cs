@@ -1,0 +1,228 @@
+﻿// //39. Напишите программу, которая перевернёт одномерный массив (последний элемент будет на первом месте, а первый - на последнем и т.д.)
+// int[] RandArray(int lenght)
+// {
+//     int[] answer = new int[lenght];
+//     for (int i = 0; i < lenght; i++)
+//     {
+//         answer[i] = new Random().Next(1, 5);
+//     }
+//     return answer;
+// }
+// void PrintArr(int[] Mas)
+// {
+//     int count = Mas.Length;
+//     for (int pos = 0; pos < count - 1; pos++)
+//     {
+//         Console.Write(Mas[pos] + " ,");
+//     }
+//     Console.WriteLine(Mas[Mas.Length - 1]);
+// }
+
+// void Reverse(int[] arr)
+// {
+//     for (int i = 0; i < arr.Length / 2; i++)
+//     {
+//         Swap(arr, i, arr.Length - 1 - i);
+//     }
+// }
+
+// void Swap(int[] arr, int i, int j)
+// {
+//     int tmp = arr[i];
+//     arr[i] = arr[j];
+//     arr[j] = tmp;
+// }
+
+
+// var array = RandArray(5);
+// PrintArr(array);
+// Reverse(array);
+// PrintArr(array);
+
+
+// int number = 45;
+// int d10 = 1;
+// int result = 0;
+// while (number != 0)
+// {
+//     result += number % 2 * d10;
+//     number /= 2;
+//     d10 *= 10;
+// }
+// System.Console.WriteLine((Convert.ToString(result)));
+
+// int a = 45;
+
+// void ToBin(int n)
+// {
+//     if(n==0)
+//     {
+//         return;
+//     }
+    
+//     ToBin(n/2);
+//     Console.Write(n%2);
+// }
+// ToBin(a);
+
+// double number = 9;
+// double firstElem = 0;
+// double secondElem = 1;
+
+// Console.WriteLine($"1. {firstElem}");
+// Console.WriteLine($"2. {secondElem}");
+
+// for (int i = 2; i <= number; i++)
+// {
+//   double nextElem = firstElem + secondElem;
+//   Console.WriteLine($"{i}. {nextElem}");
+//   firstElem = secondElem;
+//   secondElem = nextElem;
+// }
+
+// AvailableFreeSpace: указывает на объем доступного свободного места на диске в байтах
+
+// DriveFormat: получает имя файловой системы
+
+// DriveType: представляет тип диска
+
+// IsReady: готов ли диск (например, DVD-диск может быть не вставлен в дисковод)
+
+// Name: получает имя диска
+
+// RootDirectory: возвращает корневой каталог диска
+
+// TotalFreeSpace: получает общий объем свободного места на диске в байтах
+
+// TotalSize: общий размер диска в байтах
+
+// VolumeLabel: получает или устанавливает метку тома
+
+// DriveInfo[] drives = DriveInfo.GetDrives();
+ 
+// foreach (DriveInfo drive in drives)
+// {
+//     Console.WriteLine($"Название: {drive.Name}");
+//     Console.WriteLine($"Тип: {drive.DriveType}");
+//     if (drive.IsReady)
+//     {
+//         Console.WriteLine($"Объем диска: {drive.TotalSize}");
+//         Console.WriteLine($"Свободное пространство: {drive.TotalFreeSpace}");
+//         Console.WriteLine($"Метка диска: {drive.VolumeLabel}");
+//         Console.WriteLine($"объем доступного свободного места: {drive.AvailableFreeSpace}");
+//     }
+//     Console.WriteLine();
+// }
+
+
+
+// string dirName = "C:\\Program Files";
+// // если папка существует
+// if (Directory.Exists(dirName))
+// {
+//     Console.WriteLine("Подкаталоги:");
+//     string[] dirs = Directory.GetDirectories(dirName);
+//     foreach (string s in dirs)
+//     {
+//         Console.WriteLine(s);
+//     }
+//     Console.WriteLine();
+//     Console.WriteLine("Файлы:");
+//     string[] files = Directory.GetFiles(dirName);
+//     foreach (string s in files)
+//     {
+//         Console.WriteLine(s);
+//     }
+// }
+
+string oldPath = @"C:\SomeFolder";
+string newPath = @"C:\SomeDir";
+DirectoryInfo dirInfo = new DirectoryInfo(oldPath);
+if (dirInfo.Exists && !Directory.Exists(newPath))
+{
+    dirInfo.MoveTo(newPath);
+    // или так
+    // Directory.Move(oldPath, newPath);
+}
+
+
+
+
+
+double[] array = {1.7,3.6,2.7,8.9};
+double[] Res(double[] diff){
+  double max = diff[0];
+  double min = diff[0];
+  for(int i=0; i < diff.Length; i++){
+    if(diff[i] > max){
+      max = diff[i];
+    }
+    else if (diff[i] < min){
+      min = diff[i];
+    }
+  }
+  Console.WriteLine($"{max},{min}");
+  return new double[] {max,min};
+}
+double[] newAr = Res(array);
+Console.WriteLine($"{newAr[0]} - {newAr[1]} = {newAr[0]} - {newAr[1]}");
+
+или так:
+
+// Задача 38. Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
+using System.Text;
+
+//Создание массива вещественных чисел в диапазоне от MinValue до MaxValue
+double[] CreateDoubleArray(int Size, double MinValue = -10, double MaxValue = 10)
+{
+  double[] Result = new double[Size];
+
+  Random genNumber = new Random();
+  for (int i = 0; i < Size; i++)
+  {
+    Result[i] = MinValue + genNumber.NextDouble() * (MaxValue - MinValue);
+  }
+
+  return Result;
+}
+
+void PrintArray(double[] Array)
+{
+  String separator = ", ";
+  StringBuilder stringBuilder = new StringBuilder("[");
+  for (int i = 0; i < Array.Length - 1; i++)
+  {
+    stringBuilder.Append($"{Array[i]:f4}").Append(separator);
+  }
+  stringBuilder.Append($"{Array[Array.Length - 1]:f4}").Append("]");
+
+  Console.WriteLine(stringBuilder.ToString());
+}
+
+double CalcMaxMinDiffrence(double[] Array)
+{
+  double MinValue = Array[0];
+  double MaxValue = Array[0];
+
+  for (int i = 1; i < Array.Length; i++)
+  {
+    if (Array[i] < MinValue)
+    {
+      MinValue = Array[i];
+    }
+    else if (Array[i] > MaxValue)
+    {
+      MaxValue = Array[i];
+    }
+  }
+
+  return MaxValue - MinValue;
+}
+
+Console.Write("Введите размер массива: ");
+int ArrSize = Convert.ToInt32(Console.ReadLine());
+double[] Array = CreateDoubleArray(ArrSize);
+PrintArray(Array);
+
+double Diff = CalcMaxMinDiffrence(Array);
+Console.WriteLine($"Разница между максимальным и минимальным элементами массива: {Diff:f4}");
