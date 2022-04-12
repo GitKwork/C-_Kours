@@ -1,6 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-// Console.WriteLine("Hello, World!");
-// Задача 62: Заполните спирально массив 4 на 4
+﻿// Задача 62: Заполните спирально массив 4 на 4
 // (массив заполняется по часовой стрелке от периферии к центру).
 
 Console.Clear();
