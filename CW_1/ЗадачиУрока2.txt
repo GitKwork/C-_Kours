@@ -1,0 +1,61 @@
+Семинар 2
+
+
+if(n <= 0) return n;
+int nLength ;
+if(String.valueOf(n).length() % 2 == 0) nLength = String.valueOf(n).length() - 1;
+else nLength = String.valueOf(n).length();
+
+String result = String.valueOf((int) (Math.pow((int) (n / Math.pow(10, nLength)), 2)));
+n = (int) (n % Math.pow(10, nLength));
+nLength--;
+while (n > 0){
+result = result.concat(String.valueOf((int) (Math.pow((int) (n / Math.pow(10, nLength)), 2))));
+n = (int) (n % Math.pow(10, nLength));
+nLength--;
+}
+return Integer.parseInt(result);
+
+
+
+
+
+___________________________________
+
+
+
+Nurbolot Gulamidinov: int minNumber, minNumberIndex,
+maxNumber, maxNumberIndex;
+
+for (int i = 0; i < array.Length / 2; i++)
+{
+minNumber = array[i];
+minNumberIndex = i;
+maxNumber = array[i];
+maxNumberIndex = i;
+for (int j = 1 + i; j < array.Length - i; j++)
+{
+if (array[j] < minNumber)
+{
+minNumber = array[j];
+minNumberIndex = j;
+}
+else if (array[j] > maxNumber)
+{
+maxNumber = array[j];
+maxNumberIndex = j;
+}
+}
+if (array[i] > minNumber)
+{
+array[minNumberIndex] = array[i];
+array[i] = minNumber;
+}
+if (array[array.Length - i - 1] < maxNumber)
+{
+Nurbolot Gulamidinov: попробуйте время узнать
+______
+
+sergei kamianetskii: https://www.codewars.com/kata/5174a4c0f2769dd8b1000003/train/csharp
+Антон Молчанов: спасибо огромное))
+Antony Sizekh: оптимизированный
